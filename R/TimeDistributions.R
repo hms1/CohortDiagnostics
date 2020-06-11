@@ -77,6 +77,7 @@ getTimeDistributions <- function(connectionDetails = NULL,
   if (is.null(data$covariatesContinuous)) {
     result <- data.frame()
   } else {
+    result <- merge(fdata$covariatesContinuous, data$covariateRef)
     result$conceptId <- NULL
     result$analysisId <- NULL
     result$covariateId <- NULL
